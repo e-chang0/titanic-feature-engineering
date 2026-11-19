@@ -1,0 +1,13 @@
+.venv/
+tmp/
+__pycache__/
+*.pyc
+data/*.csv
+data_dictionary.csv
+figures/
+results/
+output/
+submission.json
+*.zip
+*.log
+.ipynb_checkpoints/
