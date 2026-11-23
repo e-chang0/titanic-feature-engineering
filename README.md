@@ -75,5 +75,3 @@ python 결과검사.py
 
 - [Kaggle Titanic 데이터 설명](https://www.kaggle.com/competitions/titanic/data)
 - [실제 다운로드에 사용한 공개 사본](https://github.com/datasciencedojo/datasets/blob/master/titanic.csv)
-
-다운로드한 파일이 달라지면 같은 결과를 재현하기 어려우므로 SHA256으로 원본을 확인한다. 데이터 이용 조건은 원 데이터셋의 대회 규정을 따른다.
