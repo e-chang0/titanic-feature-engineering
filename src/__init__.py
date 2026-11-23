@@ -1,1 +1,1 @@
-"""Titanic feature-engineering coursework."""
+"""타이타닉 특성 공학 과제의 전처리·학습 코드."""

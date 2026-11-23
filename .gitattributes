@@ -3,5 +3,5 @@
 *.png binary
 *.jpg binary
 *.npz binary
-# Preserve the downloaded dataset byte for byte for SHA256 reproducibility.
+# 원자료의 해시가 달라지지 않도록 줄바꿈을 변환하지 않는다.
 data/train.csv -text

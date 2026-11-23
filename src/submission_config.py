@@ -1,4 +1,4 @@
-"""Local report identity is separate from the public source-code repository."""
+"""학번·이름은 로컬 설정에서 읽고, 이 정보로 보고서 파일명을 만든다."""
 import json
 from pathlib import Path
 
@@ -11,7 +11,7 @@ def load_submission(root):
 def report_path(root,submission):
     student_id=submission.get('student_id') or 'student'
     student_name=submission.get('student_name') or 'report'
-    # Keep a local filename safe on Windows and Linux.
+    # 운영체제에서 파일명으로 사용할 수 없는 문자는 밑줄로 바꾼다.
     for character in '<>:"/\\|?*':
         student_id=student_id.replace(character,'_')
         student_name=student_name.replace(character,'_')

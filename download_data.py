@@ -1,4 +1,4 @@
-"""Download the publicly accessible Titanic copy and verify the exact data bytes."""
+"""타이타닉 공개 사본을 내려받고 원본과 같은 파일인지 해시로 확인한다."""
 from pathlib import Path
 import hashlib
 import urllib.request
@@ -16,12 +16,12 @@ def main():
             payload = response.read()
         actual = hashlib.sha256(payload).hexdigest()
         if actual != EXPECTED_SHA256:
-            raise ValueError(f'Source changed: expected {EXPECTED_SHA256}, got {actual}')
+            raise ValueError(f'다운로드한 파일이 기준 원본과 다릅니다. 예상 해시: {EXPECTED_SHA256}, 실제: {actual}')
         target.write_bytes(payload)
     actual = hashlib.sha256(target.read_bytes()).hexdigest()
     if actual != EXPECTED_SHA256:
-        raise ValueError(f'Data checksum mismatch: {actual}')
-    print(f'Verified {target.name}: SHA256={actual}')
+        raise ValueError(f'데이터 파일의 해시가 일치하지 않습니다: {actual}')
+    print(f'{target.name} 원본 확인 완료: SHA256={actual}')
 
 if __name__ == '__main__':
     main()

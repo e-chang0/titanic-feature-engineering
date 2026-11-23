@@ -1,4 +1,4 @@
-"""Create the Korean PDF directly from executed CSV/JSON results (no invented scores)."""
+"""저장된 CSV와 JSON의 실제 실험 결과를 읽어 한국어 PDF를 만든다."""
 from pathlib import Path
 import json
 from xml.sax.saxutils import escape
@@ -21,7 +21,7 @@ WIDTH=W-88
 MAIN=['Base','Exp-1','Exp-2','Exp-3']
 font_candidates=[Path('C:/Windows/Fonts/malgun.ttf'),ROOT/'fonts/NanumGothic.ttf',Path('/usr/share/fonts/truetype/nanum/NanumGothic.ttf')]
 regular=next((p for p in font_candidates if p.exists()),None)
-if regular is None:raise FileNotFoundError('Install Korean font NanumGothic or provide fonts/NanumGothic.ttf')
+if regular is None:raise FileNotFoundError('나눔고딕을 설치하거나 fonts/NanumGothic.ttf를 넣어 주세요.')
 bold=regular.with_name('malgunbd.ttf') if regular.name=='malgun.ttf' else regular.with_name('NanumGothicBold.ttf')
 pdfmetrics.registerFont(TTFont('Korean',str(regular)))
 pdfmetrics.registerFont(TTFont('KoreanBold',str(bold if bold.exists() else regular)))
